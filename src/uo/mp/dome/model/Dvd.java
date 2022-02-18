@@ -1,5 +1,7 @@
 package uo.mp.dome.model;
 
+import uo.mp.util.validate.Validate;
+
 /**
  * The {@code DVD} class represents a dvd.
  *
@@ -17,12 +19,20 @@ public class Dvd extends Item {
 
 
     private final String director;
+    private final int playingTime;
 
     public Dvd(String title, String director, int playingTime, boolean isOwned,
                String comment) {
-    	super(title,playingTime,isOwned,comment);
+    	super(title,isOwned,comment);
+    	Validate.higherThan(playingTime, 0, "Playing time must be higher than 0");
+    	this.playingTime = playingTime;
         this.director = director;
     }
+    
+    public int getPlayingTime() {
+    	return playingTime;
+    }
+    
 
     public Dvd(String title, String director, int playingTime) {
         this(title, director, playingTime, DEFAULT_IS_OWNED_VALUE,

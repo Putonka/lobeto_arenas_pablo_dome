@@ -11,23 +11,32 @@ package uo.mp.dome;
  *
  * Using as basis DOME project implemented in classroom activities:
  *
- *TODO
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
+ *
  * 1. Add javadoc comments to all public methods in all classes. Generate
  *      javadoc. 
  *
- *DONE
+ *------------------------------------------------------------------------------Done------------------------------------------------------------------------------------
  * 2. Validate method arguments you consider necessary, using ArgumentChecks.
  *      Rewrite any existing validation not using ArgumentChecks.
  *      For strings, check they are neither null nor empty nor containing just
  *      blanks. That is, there should be at least one non blank character.
  *      Revise tests so all them keep succeeding (green). DONE
  *
- *DONE
+ *------------------------------------------------------------------------------Done------------------------------------------------------------------------------------
  * 3. Add to MediaLibrary a method int searchItem(Item theItem) that searches
  *      the library for an item like the one received as a parameter and
  *      returns its position in the list of items or -1 if it has not been
  *      found.
+ *      
+ *      
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
+ *
  *      Write tests for this method and execute them.
+ *
+ *------------------------------------------------------------------------------Done------------------------------------------------------------------------------------
  *
  *
  * 4. Add method String getResponsibles() to class MediaLibrary. It returns a
@@ -35,6 +44,10 @@ package uo.mp.dome;
  *      For CDs, responsible will be the artist while for Dvd, the
  *      responsible will be the director and for video games, the author.
  *      If there are not items owned, just return an empty String.
+ *      
+ *      
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
  *
  * 5. Add a new VideoGame item. A VideoGame has:
  *      A title
@@ -45,20 +58,36 @@ package uo.mp.dome;
  *      Can be shown in the console with print
  *      A number of players
  *      One platform among XBox, PlayStation or Nintendo
+ *      
+ *      
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
  *
  * 6. Improve (or add if it has not been implemented during the session) the
  *      tests for method numberOfItemsOwned(), adding video games to it.
+ *      
+ *      
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
  *
  * 7. Check that the print method in MediaLibrary also prints video games in the
  *      console.
+ *      
+ *      
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
  *
  * 8. Execute all existing tests.
+ * 
+ * 
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
+ *
  *
  * 9. Write the body of method MediaPlayer::run(). You must create at least 3
  *      objects of each class (CD, DVD, VideoGame) to check that
  *      numberOfItemsOwned, getResponsibles and list are executed correctly.
  *
- *
+ *------------------------------------------------------------------------------TODO------------------------------------------------------------------------------------
  *
  * EXERCISE 2
  *

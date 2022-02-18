@@ -8,17 +8,14 @@ public abstract class Item {
     public static final String DEFAULT_COMMENT_VALUE = "No comment";
 
     private final String title;
-    private final int playingTime;
 
     private boolean isOwned = DEFAULT_IS_OWNED_VALUE;
     private String comment = DEFAULT_COMMENT_VALUE;
     
-    public Item(String title, int playingTime, boolean isOwned, String comment) {
+    public Item(String title, boolean isOwned, String comment) {
     	Validate.nonNull(title, "Title can't be null");
     	Validate.nonEmpty(title, "Title cannot be empty");
     	this.title= title;
-    	Validate.higherThan(playingTime, 0, "Playing time must be higher than 0");
-    	this.playingTime = playingTime;
     	this.setOwned(isOwned);
     	this.setComment(comment);
     }
@@ -43,10 +40,6 @@ public abstract class Item {
 
 	public String getTitle() {
 		return title;
-	}
-
-	public int getPlayingTime() {
-		return playingTime;
 	}
 	
 	public abstract String getResponsibles();

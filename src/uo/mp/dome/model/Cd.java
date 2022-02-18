@@ -19,14 +19,18 @@ public class Cd extends Item {
 
     private final String artist;
     private final int numberOfTracks;
+    private final int playingTime;
  
     public Cd(String title, String artist, int numberOfTracks, int playingTime,
               boolean isOwned, String comment) {
-        super(title,playingTime,isOwned,comment);
+    	
+        super(title,isOwned,comment);
         Validate.nonNull(artist, comment);
         this.artist = artist;
         Validate.higherThan(numberOfTracks, 0, "Number of tracks must be higher than 0");
         this.numberOfTracks = numberOfTracks;
+        Validate.higherThan(playingTime, 0, "Playing time must be higher than 0");
+        this.playingTime = playingTime;
     }
 
     public Cd(String title, String artist, int numberOfTracks,
@@ -37,6 +41,10 @@ public class Cd extends Item {
 
     public String getArtist() {
         return artist;
+    }
+    
+    public int getPlayingTime() {
+    	return playingTime;
     }
     
     public String getResponsibles() {

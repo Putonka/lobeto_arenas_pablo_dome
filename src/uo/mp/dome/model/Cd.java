@@ -11,7 +11,6 @@ import uo.mp.util.validate.Validate;
  * comment is initialized to "No comment" and the owned field to false.
  * </p>
  * <p>
- * TODO: Add Javadoc to all public methods.
  *
  * @author Programming Methodology 2022 Teaching Staff.
  */

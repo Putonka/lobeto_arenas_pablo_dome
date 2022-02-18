@@ -2,6 +2,20 @@ package uo.mp.dome.model;
 
 import uo.mp.util.validate.Validate;
 
+/**
+ * The {@code Item} is a superclass for media.
+ *
+ * <p>It has a title, if it is owned or not and a comment. 
+ * For it to be valid none of the fields can be null.
+ * Furthermore the comment is initialized 
+ * to "No comment" and the owned field to false.
+ * </p>
+ * <p>
+ * 
+ * @author pablo
+ *
+ */
+
 public abstract class Item {
 	
 	public static final boolean DEFAULT_IS_OWNED_VALUE = false;

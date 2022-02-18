@@ -11,7 +11,6 @@ import uo.mp.util.validate.Validate;
  * CDs, DVDs or Video Games. And as a collection of items it also contains the
  * operations that can be applied over the collection.
  * <p>
- * TODO: Update this comment when you implement the class.
  *
  * @author Programming Methodology 2022 Teaching Staff
  */
@@ -19,12 +18,23 @@ public class MediaLibrary {
 
 	private static final int ITEM_NOT_FOUND = -1;
 	private final List<Item> items = new ArrayList<Item>();
-
+	
+	
+	/**
+	 * Adds an item to the library. The item can't be null
+	 * 
+	 * @param item the Item wanted to be add, it can't be null
+	 */
     public void addItem(Item item) {
     	Validate.nonNull(item, "The item must not be null");
     	items.add(item);
     }
 
+    /**
+     * Checks in the library the number of items owned
+     * 
+     * @return the number of items owned
+     */
     public int getTotalNumberOfOwnedItems() {
     	int owned = 0;
     	for(Item i: items)
@@ -33,6 +43,11 @@ public class MediaLibrary {
     	return owned;
     }
 
+    /**
+     * Prints in the console the toString of all the items in the library.
+     * 
+     * If there are now items it prints a empty string
+     */
     public  void printAll() {
     	String aux = "";
     	
@@ -40,6 +55,13 @@ public class MediaLibrary {
     		aux+=i.toString()+" / ";
     	}
     }
+    
+    /**
+     * Search through the library if the given item is in
+     * 
+     * @param item the Item to be searched
+     * @return the index of the Item, in case it is not it return ITEM_NOT_FOUND
+     */
 
     public int searchItem(Item item) {
     	int counter = -1;
@@ -50,6 +72,12 @@ public class MediaLibrary {
     	}
     	return ITEM_NOT_FOUND;
     }
+    
+    /**
+     * Get a String with all the responsibles of the items in the list
+     * 
+     * @return a String with the responsibles. If the list is empty, it returns a empty String
+     */
     
     public String getResponsibles() {
     	String responsibles = "";

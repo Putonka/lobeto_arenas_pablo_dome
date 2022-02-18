@@ -5,15 +5,14 @@ import uo.mp.util.validate.Validate;
 /**
  * The {@code DVD} class represents a dvd.
  *
- * <p>It has a title, an artist, a director, a playing time, if it is owned or
+ * <p>It has a title, a director, a playing time, if it is owned or
  * not and a comment. For it to be valid none of the fields can be null and the
  * playing time cannot be 0. Furthermore the comment is initialized to "No
  * comment" and the owned field to false.
  * </p>
  * <p>
- * TODO: Add Javadoc to all public methods.
  *
- * @author Programming Methodology 2022 Teaching Staff.
+ * @author Pablo uo277274.
  */
 public class Dvd extends Item {
 

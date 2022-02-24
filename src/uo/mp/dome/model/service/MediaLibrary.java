@@ -3,7 +3,10 @@ package uo.mp.dome.model.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import uo.mp.dome.model.Cd;
+import uo.mp.dome.model.Dvd;
 import uo.mp.dome.model.Item;
+import uo.mp.dome.model.VideoGame;
 import uo.mp.util.validate.Validate;
 
 /**
@@ -19,6 +22,22 @@ public class MediaLibrary {
 	private static final int ITEM_NOT_FOUND = -1;
 	private final List<Item> items = new ArrayList<Item>();
 	
+	
+	public void run() {
+		addItem(new Cd("A","B",12,1,true,""));
+		addItem(new Cd("C","D",12,1));
+		addItem(new Cd("E","F",12,1,true,"A comment"));
+		addItem(new Cd("C","D",12,1,false,"A comment"));
+		addItem(new Dvd("a","b",12));
+		addItem(new Dvd("c","d",12,true,""));
+		addItem(new Dvd("e","f",12,false,""));
+		addItem(new VideoGame("a","b",11,true,"",VideoGame.Platform.PLAYSTATION));
+		addItem(new VideoGame("c","d",12,true,"",VideoGame.Platform.NINTENDO));
+		addItem(new VideoGame("c","d",12,VideoGame.Platform.XBOX));
+		
+		System.out.println(getResponsibles());
+		System.out.println(getTotalNumberOfOwnedItems());
+	}
 	
 	/**
 	 * Adds an item to the library. The item can't be null

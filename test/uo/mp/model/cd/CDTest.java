@@ -3,6 +3,7 @@ package uo.mp.model.cd;
 import org.junit.Before;
 import org.junit.Test;
 import uo.mp.dome.model.Cd;
+import uo.mp.dome.model.Dvd;
 
 import static org.junit.Assert.assertEquals;
 
@@ -45,16 +46,84 @@ public class CDTest {
     }
 
 
-    // TODO: Constructor with null title
+    /**
+     * Given: a null title
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = NullPointerException.class)
+    public void testConstructorWithNullTitle() {
+    	Cd Cd = new Cd(null, mockArtist, mockNumberOfTracks, mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid title (empty)
+    /**
+     * Given: a illegal title
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalTitle() {
+    	Cd Cd = new Cd("", mockArtist, mockNumberOfTracks, mockPlayingTime);
+    }
 
-    // TODO: Constructor with null artist
+    /**
+     * Given: a null artist
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = NullPointerException.class)
+    public void testConstructorWithNullArtist() {
+    	Cd Cd = new Cd(mockTitle, null, mockNumberOfTracks, mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid artist (empty)
+    /**
+     * Given: a illegal artist
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalArtist() {
+    	Cd Cd = new Cd(mockTitle, "", mockNumberOfTracks, mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid playing time (<0, 0)
+    /**
+     * Given: a zero playing Time
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithZeroNumberOfTracks() {
+    	Cd Cd = new Cd(mockTitle , mockArtist, 0, mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid number of tracks (<0, 0)
+    /**
+     * Given: a illegal playing time
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalNumberOfTracks() {
+    	Cd Cd = new Cd(mockTitle , mockArtist, -1, mockPlayingTime);
+    }
+
+    /**
+     * Given: a zero playing Time
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithZeroPlayingTime() {
+    	Cd Cd = new Cd(mockTitle , mockArtist, mockNumberOfTracks, 0);
+    }
+
+    /**
+     * Given: a illegal playing time
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalPlayingTime() {
+    	Cd Cd = new Cd(mockTitle , mockArtist, mockNumberOfTracks, -1);
+    }
 
 }

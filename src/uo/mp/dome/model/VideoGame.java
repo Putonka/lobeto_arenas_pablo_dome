@@ -21,7 +21,7 @@ public class VideoGame extends Item {
 	private final int numberOfPlayers;
 	private final Platform platform;
 	
-	enum Platform{
+	public enum Platform{
 		NINTENDO,
 		XBOX,
 		PLAYSTATION
@@ -41,7 +41,8 @@ public class VideoGame extends Item {
 	              boolean isOwned, String comment, Platform platform) {
 		
 	        super(title,isOwned,comment);
-	        Validate.nonNull(author, comment);
+	        Validate.nonNull(author, "The author cant be null");
+	        Validate.nonEmpty(author, "Author can't be empty");
 	        this.author = author;
 	        Validate.higherThan(numberOfPlayers, 0, "Number of players must be higher than 0");
 	        this.numberOfPlayers = numberOfPlayers;
@@ -60,8 +61,7 @@ public class VideoGame extends Item {
 	 * @param playingTime
 	 * @param platform
 	 */
-	public VideoGame(String title, String author, int numberOfPlayers,
-	              int playingTime, Platform platform) {
+	public VideoGame(String title, String author, int numberOfPlayers, Platform platform) {
 	        this(title, author, numberOfPlayers,
 	                DEFAULT_IS_OWNED_VALUE, DEFAULT_COMMENT_VALUE, platform);
 	    }

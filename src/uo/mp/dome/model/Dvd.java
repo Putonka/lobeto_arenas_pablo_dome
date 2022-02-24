@@ -25,6 +25,8 @@ public class Dvd extends Item {
     	super(title,isOwned,comment);
     	Validate.higherThan(playingTime, 0, "Playing time must be higher than 0");
     	this.playingTime = playingTime;
+    	Validate.nonNull(director, "Director can't be null");
+    	Validate.nonEmpty(director, "Director can't be empty");
         this.director = director;
     }
     

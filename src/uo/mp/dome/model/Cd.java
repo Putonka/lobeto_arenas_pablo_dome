@@ -25,6 +25,7 @@ public class Cd extends Item {
     	
         super(title,isOwned,comment);
         Validate.nonNull(artist, comment);
+        Validate.nonEmpty(artist, "Artist can't be empty");
         this.artist = artist;
         Validate.higherThan(numberOfTracks, 0, "Number of tracks must be higher than 0");
         this.numberOfTracks = numberOfTracks;
@@ -37,11 +38,22 @@ public class Cd extends Item {
         this(title, artist, numberOfTracks, playingTime,
                 DEFAULT_IS_OWNED_VALUE, DEFAULT_COMMENT_VALUE);
     }
+    
+    /**
+     * Getter for artist
+     * 
+     * @return artist value
+     */
 
     public String getArtist() {
         return artist;
     }
     
+    /**
+     * Getter for playingTime
+     * 
+     * @return playingTime Value
+     */
     public int getPlayingTime() {
     	return playingTime;
     }
@@ -50,6 +62,11 @@ public class Cd extends Item {
         return artist;
     }
 
+    /**
+     * Getter for numberOfTracks
+     * 
+     * @return numberOfTracks value
+     */
     public int getNumberOfTracks() {
         return numberOfTracks;
     }

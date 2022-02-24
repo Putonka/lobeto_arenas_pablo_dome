@@ -3,6 +3,7 @@ package uo.mp.model.dvd;
 import org.junit.Before;
 import org.junit.Test;
 import uo.mp.dome.model.Dvd;
+import uo.mp.dome.model.VideoGame;
 
 import static org.junit.Assert.assertEquals;
 
@@ -42,14 +43,64 @@ public class DvdTest {
         assertEquals(Dvd.DEFAULT_COMMENT_VALUE, this.mockDVD.getComment());
     }
 
-    // TODO: Constructor with null title
+    /**
+     * Given: a null title
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = NullPointerException.class)
+    public void testConstructorWithNullTitle() {
+    	Dvd DvD = new Dvd(null, mockDirector, mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid title (empty)
+    /**
+     * Given: a illegal title
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalTitle() {
+    	Dvd DvD = new Dvd("", mockDirector, mockPlayingTime);
+    }
 
-    // TODO: Constructor with null director
+    /**
+     * Given: a null director
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = NullPointerException.class)
+    public void testConstructorWithNullDirector() {
+    	Dvd DvD = new Dvd(mockTitle, null, mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid director (empty)
+    /**
+     * Given: a illegal director
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalDirector() {
+    	Dvd DvD = new Dvd(mockTitle, "", mockPlayingTime);
+    }
 
-    // TODO: Constructor with invalid playing time (<0, 0)
+    /**
+     * Given: a zero playing time
+     * When: the constructor is called
+     * Then: a nullPointerException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithZeroPlayingTime() {
+    	Dvd DvD = new Dvd(mockTitle, mockDirector, 0);
+    }
+
+    /**
+     * Given: a illegal playingTime
+     * When: the constructor is called
+     * Then: a IllegalArgumentException is thrown
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructorWithIllegalPlayingTime() {
+    	Dvd DvD = new Dvd(mockTitle, mockDirector, -1);
+    }
 
 }
